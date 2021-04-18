@@ -13,7 +13,7 @@ Below is a proposal for the First-Order Query Language, a query language based o
 | ∃                | \E                 | Followed by a ∈ expression, this means following first-order logic statements are true for at least one member of the set, ie. a existential quantification. |
 | ∃!               | \E!                | Same as above but asserts the uniqueness of the bound variable to follow. |
 | ⟹               | =>                 | Within a universal or existential scope, represents implications. Can also be used between universal or existential scopes to represent aggregations. |
-| |                | |                  | Absolute value for a number or the size of a set |
+| &#124;           | &#124;             | Absolute value for a number or the size of a set |
 | ∧                | ^                  | Conjunction of two statements |
 | ∨                | v                  | Disjunction of two statements |
 | ≤, ≥, ≠, =, >, < | <=,>=, !=, =, >, < | Represents comparison operators for scalars and strings |
