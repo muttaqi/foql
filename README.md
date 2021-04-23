@@ -24,7 +24,7 @@ Below is a proposal for the First-Order Query Language, a query language based o
 
 Accessing field 'f' of item 'x' should be represented by a function f(x)
 
-# Examples
+# Supported Queries
 
 ### Query all items by a condition
 ```
@@ -72,3 +72,7 @@ Accessing field 'f' of item 'x' should be represented by a function f(x)
     (/Ay/eR y/e/U ^ num_field_1(x) = num_field_1(y)) ^
     count_field(x) = |R|
 ```
+
+# Parsing
+
+An AST should be generated from the query using well-defined objects for each operator. Along this, a list of sets should be defined with, again well-defined properties. The AST should then be mutated or a new AST should be created to compute the Prenex Normal Form of the query. This will all be done in AssemblyScript to maximize performance, then be matched with various query types in a separate pure TypeScript module. Supported queries should be kept updated in this document.

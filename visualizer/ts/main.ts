@@ -1,5 +1,12 @@
 import {instantiate} from "../../node_modules/assemblyscript/lib/loader/index";
 
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+var visualize;
+
 var __getString;
 var __newString;
 var __getArray;
@@ -14,8 +21,9 @@ var imports = {
     }
 };
 
-instantiate(fetch("driver.wasm"), imports)
+instantiate(fetch("visualizer.wasm"), imports)
     .then((module) => {
+        visualize = module.exports.visualize;
 
         __getString = module.exports.__getString;
         __newString = module.exports.__newString;
@@ -24,3 +32,8 @@ instantiate(fetch("driver.wasm"), imports)
         __pin = module.exports.__pin;
         __unpin = module.exports.__unpin;
     });
+   
+readline.question('Enter a text:', text => {
+    console.log(visualize(text));
+    readline.close();
+});

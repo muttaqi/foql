@@ -1,4 +1,4 @@
-var props: Map<string, string> = new Map<string, string>;
+var props: Map<string, string> = new Map<string, string>();
 var pipeline: string[][];
 
 function getProp(key: string) {
